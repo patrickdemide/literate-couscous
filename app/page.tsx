@@ -1,8 +1,10 @@
+import { DropdownMenuDemo } from "@/components/avatar";
 import { ModeToggle } from "@/components/ModeToggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
+  ArrowDown,
   BellIcon,
   BookmarkIcon,
   DotIcon,
@@ -17,6 +19,15 @@ import {
   UsersIcon,
 } from "lucide-react";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+
 export default function Home() {
   return (
     <main className="lg:px-5">
@@ -27,10 +38,7 @@ export default function Home() {
           <div className="rounded-full bg-accent/25 p-2">
             <BellIcon />
           </div>
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
+          <DropdownMenuDemo />
         </div>
       </div>
 
@@ -47,7 +55,7 @@ export default function Home() {
               <div>Abonnement</div>
             </div>
 
-            <div className="flex space-x-2">
+            {/* <div className="flex space-x-2">
               <BookmarkIcon />
               <div>Bookmaks</div>
             </div>
@@ -55,9 +63,32 @@ export default function Home() {
             <div className="flex space-x-2">
               <User />
               <div>Profile</div>
+            </div> */}
+
+
+            <div >
+              <Dialog >
+                <DialogTrigger asChild>
+                  
+                  <PlusIcon className=" size-20 rounded-full bg-accent" />
+
+
+
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Are you absolutely sure?</DialogTitle>
+                    <DialogDescription>
+                      This action cannot be undone. This will permanently delete your account
+                      and remove your data from our servers.
+                    </DialogDescription>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
             </div>
 
-            <PlusIcon className="fixed bottom-20 right-20 size-20 rounded-full bg-accent" />
+
+
           </div>
         </div>
 
@@ -142,12 +173,15 @@ export default function Home() {
       </div>
 
       <div className="sm:hidden px-2 pb-36">
-        <div className=" text-center text-2xl font-bold pt-4">SiteName</div>
-        <ModeToggle />
+        {/* <div className=" text-center text-2xl font-bold pt-4">SiteName</div> */}
 
-        <div className=" flex space-x-1">
-          <Button>Pour vous</Button>
-          <Button>Following</Button>
+
+        <div className=" flex py-2 justify-center space-x-2  text-xl font-bold">
+          <div className=" text-blue-600">Pour vous</div>
+          <div className=" text-blue-600">
+            /
+          </div>
+          <div>Following</div>
         </div>
 
         <div className="flex-1 space-y-20 pt-14">

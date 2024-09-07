@@ -3,6 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
+  ArrowDown,
   ArrowLeft,
   BellIcon,
   BookmarkIcon,
@@ -214,11 +215,12 @@ export default function DetailPost() {
         />
       </div>
 
-      <div className="mb-10 border-b border-accent">
+      <div className="mb-10 border-b border-accent flex justify-between">
         <div>Comments</div>
-        <div>
-          <div>Recent</div>
-        </div>
+        <Button>
+          Reccent
+          <ArrowDown />
+        </Button>
       </div>
 
       <div className="space-y-20 pb-40 sm:hidden">
@@ -240,24 +242,38 @@ export default function DetailPost() {
                 <EllipsisIcon />
               </div>
 
+              <div className=" flex space-x-3  p-2 border-l border-blue-600 bg-accent/25 rounded-xl">
+                <Avatar className=" size-6">
+                  <AvatarImage src="https://github.com/shadcn.png" />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <div>
+                  <div className="">
+                    <div className="flex">
+                      <div className=" text-sm">romaricdemide</div>
+                      <DotIcon />
+                      <div className="text-muted-foreground">4h</div>
+                    </div>
+                    <div className=" line-clamp-2 text-muted-foreground text-sm">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-              <div className="line-clamp-3">
+              <div className=" text-sm">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem
+                nostrum pariatur atque culpa illum vitae doloremque cupiditate,
+                minus, placeat earum ipsam ex vel quo repellat, id iusto.
+                Suscipit, corporis obcaecati?     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem
+                nostrum pariatur atque culpa illum vitae doloremque cupiditate,
+                minus, placeat earum ipsam ex vel quo repellat, id iusto.
+                Suscipit, corporis obcaecati?     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem
                 nostrum pariatur atque culpa illum vitae doloremque cupiditate,
                 minus, placeat earum ipsam ex vel quo repellat, id iusto.
                 Suscipit, corporis obcaecati?
               </div>
 
-              <div className="text-blue-600">
-                {" "}
-                #endregion #endregion #endregion #endregion #endregion{" "}
-              </div>
-
-              <img
-                src="/59f63a8e006156c86a7cc8116351d93c.jpg"
-                alt=""
-                className="w-full rounded-lg"
-              />
 
               <div className="flex space-x-5 pt-3">
                 <div className="flex space-x-2 text-muted-foreground">
@@ -266,10 +282,11 @@ export default function DetailPost() {
                 </div>
 
                 <div className="flex space-x-2 text-muted-foreground">
-                  <MessageCircle />
-                  <div>100k</div>
+                  Repondre
                 </div>
               </div>
+
+
             </div>
           </div>
         ))}
