@@ -146,7 +146,7 @@ export default function DetailPost() {
       <div className="px-2 pb-36 sm:hidden">
         <div className="fixed inset-x-0 top-0 z-20 flex justify-between space-x-1 bg-background py-3">
           <ArrowLeft />
-          <div className="text-xl font-bold">Rayan Post's</div>
+          <div className="text-xl font-bold">Rayan  Posts</div>
           <SearchIcon />
         </div>
 
