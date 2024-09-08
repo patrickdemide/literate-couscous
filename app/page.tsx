@@ -4,11 +4,17 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
+  AlignJustifyIcon,
+  AlignRightIcon,
   ArrowDown,
   BellIcon,
   BookmarkIcon,
+  BotIcon,
+  ChevronDown,
+  ChevronLeft,
   DotIcon,
   EllipsisIcon,
+  EllipsisVertical,
   HeartIcon,
   HomeIcon,
   MessageCircle,
@@ -27,6 +33,18 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+
 
 export default function Home() {
   return (
@@ -66,26 +84,7 @@ export default function Home() {
             </div> */}
 
 
-            <div >
-              <Dialog >
-                <DialogTrigger asChild>
-                  
-                  <PlusIcon className=" size-20 rounded-full bg-accent" />
 
-
-
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>Are you absolutely sure?</DialogTitle>
-                    <DialogDescription>
-                      This action cannot be undone. This will permanently delete your account
-                      and remove your data from our servers.
-                    </DialogDescription>
-                  </DialogHeader>
-                </DialogContent>
-              </Dialog>
-            </div>
 
 
 
@@ -168,25 +167,145 @@ export default function Home() {
                 ))}
               </div>
             </div>
+
+            <div className=" fixed bottom-10 right-32">
+              <Dialog >
+                <DialogTrigger asChild>
+
+                  <PlusIcon className=" size-20 rounded-full bg-accent" />
+
+
+
+                </DialogTrigger>
+                <DialogContent className=" ">
+                  <DialogHeader>
+                    <DialogTitle>Are you absolutely sure?</DialogTitle>
+                    <DialogDescription>
+                      This action cannot be undone. This will permanently delete your account
+                      and remove your data from our servers.
+                    </DialogDescription>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="sm:hidden px-2 pb-36">
-        {/* <div className=" text-center text-2xl font-bold pt-4">SiteName</div> */}
+      <div className="sm:hidden  pb-36">
 
 
-        <div className=" flex py-2 justify-center space-x-2  text-xl font-bold">
+        {/* <div className=" flex justify-between backdrop-blur-3xl  px-4 py-2  sticky top-0 z-30 bg-background items-center">
+          <div className=" font-bold text-lg flex-1">
+            <UsersIcon />
+          </div>
+
+
+
+
+          <Drawer>
+            <DrawerTrigger>
+              <div className=" flex items-center space-x-1">
+                <div className=" text-2xl font-bold">ThreadClone</div>
+                <ChevronDown />
+              </div>
+            </DrawerTrigger>
+            <DrawerContent className=" pb-10 ">
+              <div className=" flex flex-col space-y-2">
+                <Button variant={'secondary'}>Pour toi</Button>
+                <Button variant={'secondary'}>Following</Button>
+                <Button variant={'secondary'}>Bookmaks</Button>
+
+              </div>
+
+            </DrawerContent>
+          </Drawer>
+
+
+          <div className=" flex space-x-4  justify-end flex-1">
+
+          <PlusIcon />
+          <BellIcon />
+            <Avatar className=" size-7">
+              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+          </div>
+        </div>
+
+
+
+
+        <div className=" space-y-2 py-4">
+          <Input className=" bg-accent text-muted-foreground" placeholder="Search..." />
+
+
+          <div className=" pt-5 text-xs">
+            sugestied friends
+          </div>
+          <div className=" flex overflow-x-auto w-full">
+            {
+              Array.from({ length: 12 }).map((_, i) => (
+                <div key={i} className=" w-60 h-20 bg-accent"></div>
+              ))
+            }
+          </div>
+
+
+        </div>
+        <div className=" sticky top-12 py-2 z-30 bg-background flex space-x-2">
+          <Button variant={'secondary'} className=" flex-1">Pour toi</Button>
+          <Button variant={'secondary'} className=" flex-1">Folowing</Button>
+        </div> */}
+        {/* <div className=" flex py-2 justify-center space-x-2  text-xl font-bold">
           <div className=" text-blue-600">Pour vous</div>
           <div className=" text-blue-600">
             /
           </div>
           <div>Following</div>
-        </div>
+        </div> */}
 
-        <div className="flex-1 space-y-20 pt-14">
+
+
+
+
+
+        {/* 
+        <div className=" flex p-4 overflow-x-auto w-full pt-4 space-x-5">
           {Array.from({ length: 12 }).map((_, i) => (
-            <div key={i} className="mx-auto flex max-w-lg space-x-2">
+            <div>
+              <Avatar className=" size-12">
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <div>rony</div>
+            </div>
+          ))}
+        </div> */}
+
+
+
+
+          <div className=" flex space-x-3 text-xl justify-center font-bold sticky top-0 bg-background py-3">
+            <div className=" underline decoration-4 underline-offset-8 decoration-blue-600">For you</div>
+            <div className="  text-muted-foreground">Following</div>
+          </div>
+
+          <div className=" pt-5 text-xs">
+            sugestied friends
+          </div>
+          <div className=" flex overflow-x-auto w-full">
+            {
+              Array.from({ length: 12 }).map((_, i) => (
+                <div key={i} className=" w-60 h-20 bg-accent"></div>
+              ))
+            }
+          </div>
+       
+
+        <div className="flex-1 space-y-20 pt-10">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <div key={i} className="mx-auto flex  py-3 max-w-lg space-x-2">
               <Avatar>
                 <AvatarImage src="https://github.com/shadcn.png" />
                 <AvatarFallback>CN</AvatarFallback>
